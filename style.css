@@ -15,6 +15,26 @@ body {
     border-radius: 60px 60px 30px 30px;
     padding: 2px;
     animation: bodymove 3s infinite;
+    position: relative;
+    box-shadow: 0.9px 1.8px 3.6px rgba(0, 0, 0, 0.017),
+    2.3px 4.8px 10px rgba(0, 0, 0, 0.025),
+    5.5px 11.5px 24.1px rgba(0, 0, 0, 0.033),
+    20px 42px 80px rgba(0, 0, 0, 0.05);
+}
+
+.outer::before {
+    content: '';
+    height: 70px;
+    width: 193px;
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    border: 5px solid rgba(239, 101, 101, 0.632);
+    left: -14px;
+    top: -27px;
+    border-bottom-color: transparent;
+    border-radius: 50% 50% 0px 0px;
+    z-index: -1;
 }
 
 .head {
@@ -46,14 +66,45 @@ body {
     width: 15px;
     background-color: black;
     animation: bodymove 3s infinite; 
+    z-index: 1;
+    position: relative;
+}
+
+.headset::before {
+    content: "";
+    height: 25px;
+    width: 5px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 .headset1 {
     border-radius: 10px 0px 0px 10px;
 }
 
+.headset1::before {
+    left: -5px;
+    border-radius: 10px 0px 0px 10px;
+}
+
 .headset2 {
     border-radius: 0px 10px 10px 0px;
+}
+
+.headset2::before {
+    right: -5px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.eyes:hover > .eye:nth-child(1) {
+    animation: newEye 0.5s ease forwards;
+}
+
+.eyes:hover > .eye:nth-child(2) {
+    height: 40px;
+    animation: newEye2 0.5s ease forwards;
 }
 
 @keyframes bodymove {
@@ -104,5 +155,20 @@ body {
     100% {
         height: 40px;
         transform: translate(0px, 0px);
+    }
+}
+
+@keyframes newEye {
+    100% {
+        height: 10px;
+        border-radius: 10px;
+        transform: translate(0px, 10px);
+    }
+}
+
+@keyframes newEye2 {
+    100% {
+        height: 25px;
+        border-radius: 10px;
     }
 }
