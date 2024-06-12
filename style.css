@@ -58,7 +58,14 @@ body {
     height: 40px;
     width: 25px;
     border-radius: 50%;
+}
+
+.eye.relaxed {
     animation: eyemove 5s infinite;
+}
+
+.eye.controlled {
+    transform: translate(calc(-50% + 45px * var(--x)), calc(-50% + 50px * var(--y)));
 }
 
 .headset {
@@ -171,4 +178,19 @@ body {
         height: 25px;
         border-radius: 10px;
     }
+}
+
+.btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.switch-btn {
+    width: 100%;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    border-color: #d19effd1;
 }
